@@ -22,7 +22,7 @@ app.use(cors({ origin: true, credentials: true }));
 app.use(express.json({ extended: false }));
 
 // Join client
-// app.use(express.static(path.join(__dirname, "build")));
+app.use(express.static(path.join(__dirname, "/client/build")));
 
 // Use routes
 app.use("/api/users", require("./routes/api/users"));
@@ -32,9 +32,9 @@ app.use("/api/houses", require("./routes/api/houses"));
 app.use("/api/notifications", require("./routes/api/notifications"));
 app.use("/api/bills", require("./routes/api/bills"));
 
-// app.get("/*", function (req, res) {
-//   res.sendFile(path.join(__dirname, "build", "index.html"));
-// });
+app.get("/*", function (req, res) {
+  res.sendFile(path.join(__dirname, "/client/build/index.html"));
+});
 
 const port = process.env.PORT || 5000;
 

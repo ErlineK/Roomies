@@ -2,9 +2,11 @@
   "name": "roomies",
   "version": "1.0.0",
   "description": "Roomies App",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "nodemon index.js ",
+    "server": "nodemon index.js",
+    "client": "npm start --prefix client",
     "app": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

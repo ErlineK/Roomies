@@ -6,7 +6,7 @@ class HouseList extends Component {
     super(props);
     this.state = {
       buyItems: [],
-      message: ""
+      message: "",
     };
   }
   addItem(evt) {
@@ -17,14 +17,14 @@ class HouseList extends Component {
 
     if (isOnTheList) {
       this.setState({
-        message: "Item already on the list."
+        message: "Item already on the list.",
       });
     } else {
       newItem !== "" &&
         this.setState({
           //prevention of empty sring
           buyItems: [...this.state.buyItems, newItem], //this will be an object that updates the current state
-          message: ""
+          message: "",
         });
     }
 
@@ -32,19 +32,19 @@ class HouseList extends Component {
   }
 
   removeItem(item) {
-    const newBuyItems = this.state.buyItems.filter(buyItem => {
+    const newBuyItems = this.state.buyItems.filter((buyItem) => {
       //getting the old state, taking each item from the original state and compare the items to the ones we want to remove while keeping those still in the state
       return buyItem !== item;
     });
 
     this.setState({
-      buyItems: [...newBuyItems]
+      buyItems: [...newBuyItems],
     });
   }
 
   removeAll() {
     this.setState({
-      buyItems: []
+      buyItems: [],
     });
   }
 
@@ -54,10 +54,11 @@ class HouseList extends Component {
       <div className="HouseList">
         <div className="house-columns">
           <h2>House Items</h2>
+          <h4>This is an incomplete module! Comming soon...</h4>
           <form
-            ref={input => (this.addForm = input)}
+            ref={(input) => (this.addForm = input)}
             className="form-inline"
-            onSubmit={evt => {
+            onSubmit={(evt) => {
               this.addItem(evt);
             }}
           >
@@ -66,7 +67,7 @@ class HouseList extends Component {
                 Add New Item
               </label>
               <input
-                ref={input => (this.newItem = input)}
+                ref={(input) => (this.newItem = input)}
                 type="text"
                 placeholder="Cleaning Spray"
                 className="form-control"
@@ -89,14 +90,14 @@ class HouseList extends Component {
               </tr>
             </thead>
             <tbody>
-              {buyItems.map(item => {
+              {buyItems.map((item) => {
                 return (
                   <tr key={item}>
                     <th scope="row">1</th>
                     <td>{item}</td>
                     <td>
                       <button
-                        onClick={evt => this.removeItem(item)}
+                        onClick={(evt) => this.removeItem(item)}
                         type="button"
                         className="btn btn-default btn-sm"
                       >
@@ -112,7 +113,7 @@ class HouseList extends Component {
                 <td colSpan="2">&nbsp;</td>
                 <td className="text-right">
                   <button
-                    onClick={evt => this.removeAll()}
+                    onClick={(evt) => this.removeAll()}
                     type="button"
                     className="btn btn-primary btn-sm"
                   >
