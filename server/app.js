@@ -25,12 +25,12 @@ app.use(express.json({ extended: false }));
 // app.use(express.static(path.join(__dirname, "/client/build")));
 
 // Use routes
-app.use("/api/users", require("./routes/api/users"));
-app.use("/api/auth", require("./routes/api/auth"));
-app.use("/api/chores", require("./routes/api/chores"));
-app.use("/api/houses", require("./routes/api/houses"));
-app.use("/api/notifications", require("./routes/api/notifications"));
-app.use("/api/bills", require("./routes/api/bills"));
+app.use("/api/users", require("../routes/api/users"));
+app.use("/api/auth", require("../routes/api/auth"));
+app.use("/api/chores", require("../routes/api/chores"));
+app.use("/api/houses", require("../routes/api/houses"));
+app.use("/api/notifications", require("../routes/api/notifications"));
+app.use("/api/bills", require("../routes/api/bills"));
 
 // app.get("/*", function (req, res) {
 //   res.sendFile(path.join(__dirname, "/client/build/index.html"));
