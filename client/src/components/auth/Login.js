@@ -22,7 +22,7 @@ const test_user = {
   // pass: "Bond007",
 };
 
-function Login() {
+export default function Login() {
   const history = useHistory();
   const [isLoading, setLoading] = useState(false);
   const [srvError, setSrvError] = useState();
@@ -137,5 +137,3 @@ function Login() {
     </div>
   );
 }
-
-export default Login;

@@ -20,7 +20,7 @@ export default function () {
       <Route exact path="/Home" render={() => <Home />} />
       <Route exact path="/Registration" render={() => <Registration />} />
       <Route exact path="/CreateProfile" render={() => <CreateProfile />} />
-      <Route exact path="/Login" render={() => <Login />} />
+      <Route exact path="/Login" component={Login} />
       <Route exact path="/Bills" component={Bills} />
       <Route exact path="/Balance" component={Balance} />
       <Route exact path="/ViewBill" component={ViewBill} />
