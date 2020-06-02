@@ -56,8 +56,8 @@ export default (initImage, imgSource) => {
     axios
       .put(uploadImgUrl, uploadData, requestHeader)
       .then((res) => {
-        console.log("Saved avatar successfully");
-        console.log(res);
+        // console.log("Saved avatar successfully");
+        // console.log(res);
 
         let newImgLink = "";
 

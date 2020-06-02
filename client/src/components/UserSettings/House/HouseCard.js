@@ -18,8 +18,6 @@ export default function HouseCard({ house }) {
 
   const handleDeclineInvitation = (e) => {
     e.preventDefault();
-
-    console.log("declining invitation");
     acceptHouseInv(house._id, false);
   };
 

@@ -9,11 +9,11 @@ class Chores extends Component {
       taskItems: [],
       message: "",
       roommates: ["Devin", "Erline", "Mike", "Nicole"],
-      date: new Date()
+      date: new Date(),
     };
   }
 
-  onChange = date => this.setState({ date }, () => console.log(this.state));
+  onChange = (date) => this.setState({ date }, () => console.log(this.state));
 
   addTask(evt) {
     evt.preventDefault();
@@ -23,14 +23,14 @@ class Chores extends Component {
 
     if (isOnTheList) {
       this.setState({
-        message: "Item already on the list."
+        message: "Item already on the list.",
       });
     } else {
       newItem !== "" &&
         this.setState({
           //prevention of empty sring
           taskItems: [...this.state.taskItems, newItem], //this will be an object that updates the current state
-          message: ""
+          message: "",
         });
     }
 
@@ -39,7 +39,7 @@ class Chores extends Component {
 
   removeAll() {
     this.setState({
-      taskItems: []
+      taskItems: [],
     });
   }
 
@@ -48,11 +48,12 @@ class Chores extends Component {
     return (
       <div className="chores">
         <div className="chore-columns">
-          <h2>House Tasks</h2>
+          <h2>House Chores</h2>
+          <h4>This is an incomplete module! Comming soon...</h4>
           <form
-            ref={input => (this.addForm = input)}
+            ref={(input) => (this.addForm = input)}
             className="form-inline"
-            onSubmit={evt => {
+            onSubmit={(evt) => {
               this.addTask(evt);
             }}
           >
@@ -61,7 +62,7 @@ class Chores extends Component {
                 Add New Task
               </label>
               <input
-                ref={input => (this.newItem = input)}
+                ref={(input) => (this.newItem = input)}
                 type="text"
                 placeholder="Sweeping"
                 className="form-control"
@@ -84,14 +85,14 @@ class Chores extends Component {
               </tr>
             </thead>
             <tbody>
-              {taskItems.map(item => {
+              {taskItems.map((item) => {
                 return (
                   <tr key={item}>
                     {/* <th scope="row">1</th> */}
                     <td>{item}</td>
                     <td>
                       <select>
-                        {this.state.roommates.map(list => (
+                        {this.state.roommates.map((list) => (
                           <option key={list} value={list}>
                             {list}
                           </option>
@@ -113,7 +114,7 @@ class Chores extends Component {
                 <td colSpan="2">&nbsp;</td>
                 <td className="text-right">
                   <button
-                    onClick={evt => this.removeAll()}
+                    onClick={(evt) => this.removeAll()}
                     type="button"
                     className="btn btn-sm"
                   >

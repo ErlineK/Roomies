@@ -29,7 +29,7 @@ export default (initialVal, valueType) => {
     const validationError = validateVal(value, valueType);
 
     if (validationError && validationError !== "") {
-      console.log("setting error");
+      // console.log("setting error");
       valid = false;
       setError(validationError);
     }

@@ -92,7 +92,7 @@ exports.addNewBill = async (req, res) => {
     }).save();
 
     if (newBill.bill_type === "Roomie Transfer") {
-      console.log("\nAdding roomies payment to billId " + newBill._id);
+      // console.log("\nAdding roomies payment to billId " + newBill._id);
 
       // create payment for roomie
       const roomiePayment = await new Payment({
@@ -105,7 +105,7 @@ exports.addNewBill = async (req, res) => {
         total_amount: billParams.total_amount,
       }).save();
 
-      console.log(roomiePayment);
+      // console.log(roomiePayment);
 
       // add payment to bill
       await Bill.findByIdAndUpdate(newBill._id, {
@@ -178,8 +178,8 @@ exports.acceptRoomieTransfer = async (req, res) => {
       { new: true }
     );
 
-    console.log("\ngot ntf updated:");
-    console.log(ntf);
+    // console.log("\ngot ntf updated:");
+    // console.log(ntf);
 
     // const ntfReq = {
     //   ...req,

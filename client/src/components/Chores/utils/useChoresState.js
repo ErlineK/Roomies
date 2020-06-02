@@ -19,7 +19,7 @@ export default (mode) => {
   );
 
   const getAllChores = () => {
-    console.log("calling getAllChores from useChoresState for mode: " + mode);
+    // console.log("calling getAllChores from useChoresState for mode: " + mode);
     if (mode === choresMode.HOME) {
       setRequest({
         reqUri: `${houseId}`,
@@ -44,7 +44,6 @@ export default (mode) => {
     axios
       .post(BASE_URI_CHORES, data)
       .then((res) => {
-        console.log("added chore successfully");
         getAllChores();
       })
       .catch((err) => {

@@ -18,8 +18,6 @@ export default function Bills() {
   );
   const [billType, handleBillTypeChange] = useInputState("select", "BILL_TYPE");
 
-  console.log("Bills is called");
-
   const billTypeOptions = BILL_TYPES.map((option) => (
     <option key={option} value={option}>
       {option}

@@ -12,8 +12,6 @@ export default function AddComment({ billId }) {
 
   const handleAddComment = (e) => {
     e.preventDefault();
-
-    console.log("adding comment: " + comment);
     toggleEditMode();
   };
 

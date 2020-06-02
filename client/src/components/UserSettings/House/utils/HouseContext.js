@@ -44,9 +44,6 @@ export function HouseProvider(props) {
 
   const handleNewHouse = (newHouse) => {
     if (user !== undefined && user._id !== "") {
-      console.log("Trying to add house for user " + user._id);
-      console.log(newHouse);
-
       setLoading(true);
 
       // add new house to DB.
@@ -59,8 +56,8 @@ export function HouseProvider(props) {
           requestHeader
         )
         .then((res) => {
-          console.log("Added new house successfully");
-          console.log(res);
+          // console.log("Added new house successfully");
+          // console.log(res);
 
           loginUser(res.data.user);
           setLoading(false);
@@ -84,8 +81,6 @@ export function HouseProvider(props) {
         : [];
 
     if (tenantInList.length === 0) {
-      console.log("trying to add tenants to tenants list");
-
       setLoading(true);
       axios
         .put(
@@ -108,9 +103,6 @@ export function HouseProvider(props) {
           return error.response.data.error;
         });
     } else {
-      console.log("tenant alredy in list");
-      console.log(tenantInList);
-
       setLoading(false);
       return "Tenant already exist";
     }

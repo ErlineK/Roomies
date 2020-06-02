@@ -11,15 +11,14 @@ import axios from "axios";
 const test_user = {
   // email: "master@puppets.com",
   // pass: "Qwer1234",
-
   // email: "super@super.com",
   // pass: "Qwer1234",
-
-  email: "test@test.com",
-  pass: "Test1234",
-
+  // email: "test@test.com",
+  // pass: "Test1234",
   // email: "Bond007@gmail.com",
   // pass: "Bond007",
+  email: "",
+  pass: "",
 };
 
 export default function Login() {
@@ -61,14 +60,13 @@ export default function Login() {
     axios
       .post(`${BASE_URL}/auth`, { email: email, password: password })
       .then((res) => {
-        console.log("Logged In successfully");
-        console.log(res);
+        // console.log("Logged In successfully");
+        // console.log(res);
         //  save user and token to context
         loginUser(res.data.user, res.data.token);
 
         // redirect home
         history.push("/UserHome");
-        // <Redirect to={"/UserHome"} />;
       })
       .catch((error) => {
         setLoading(false);

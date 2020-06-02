@@ -24,8 +24,8 @@ router.post("/", (req, res) => {
   // get user by email
   User.findOne({ email }).then((user) => {
     if (!user) {
-      console.log("Couldnt find user with email " + email);
-      console.log(user);
+      // console.log("Couldnt find user with email " + email);
+      // console.log(user);
       return res.status(400).json({ error: "User not found" });
     }
 

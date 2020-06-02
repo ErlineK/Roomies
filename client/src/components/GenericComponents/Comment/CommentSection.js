@@ -2,8 +2,6 @@ import React from "react";
 import CommentItem from "./CommentItem";
 
 function CommentSection({ comments, type }) {
-  console.log(comments);
-
   const commentItems =
     comments &&
     comments.map((comment) => <CommentItem key={comment._id} item={comment} />);

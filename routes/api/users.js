@@ -41,7 +41,6 @@ router.put("/profile", auth, (req, res) => {
  * @access      Public
  */
 router.put("/avatar", auth, (req, res) => {
-  console.log("updating avatar for user " + req.body.userId);
   User.findByIdAndUpdate(
     { _id: req.body.userId },
     { user_avatar: req.body.avatar },

@@ -56,8 +56,8 @@ export default function CreateProfile() {
         requestHeader
       )
       .then((res) => {
-        console.log("Profile updated successfully");
-        console.log(res);
+        // console.log("Profile updated successfully");
+        // console.log(res);
 
         resetPhone();
         resetBDate();

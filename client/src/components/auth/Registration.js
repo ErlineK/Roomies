@@ -35,8 +35,8 @@ function Registration() {
     axios
       .post(`${BASE_URL}/users`, { name, email, password })
       .then((res) => {
-        console.log("Registered successfully");
-        console.log(res);
+        // console.log("Registered successfully");
+        // console.log(res);
         //  save user and token to context
         loginUser(res.data.user, res.data.token);
 
@@ -87,10 +87,8 @@ function Registration() {
 
   const doSubmit = (event) => {
     //This will handle the form data
-    console.log("register form submit");
     event.preventDefault();
 
-    /** TODO: Consider adding validation to input state hook */
     if (validated()) {
       handleRegistration();
     } else {

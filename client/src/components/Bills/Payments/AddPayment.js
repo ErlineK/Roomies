@@ -37,8 +37,6 @@ function AddPayment({ bill }) {
   const [comment, handleCommentChange] = useInputState("", "COMMENT");
 
   const handleAddPayment = () => {
-    console.log("saving payment");
-
     const payment = {
       transaction_date: paymentDate,
       reference_num: refNum,

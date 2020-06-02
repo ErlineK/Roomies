@@ -15,18 +15,12 @@ function AddTenantsPop() {
   );
 
   const handleAddTenant = () => {
-    console.log("saving tenant");
-
     // TODO: add loader
 
     const tenantError = handleNewTenant(email, name);
     if (tenantError && tenantError !== "") {
-      // TODO: handle error
       setError(tenantError);
     }
-    // else {
-    //   toggleAddTenants();
-    // }
   };
 
   //   Validate name exist and not empty

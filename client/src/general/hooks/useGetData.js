@@ -36,8 +36,8 @@ export default ({ reqUri, reqType, reqData }, initData) => {
           );
         }
 
-        console.log("got response on useGetData for " + requst.url);
-        console.log(response);
+        // console.log("got response on useGetData for " + requst.url);
+        // console.log(response);
 
         if (!didCancel) {
           fetchDispatch({ type: "FETCH_SUCCESS", payload: response.data });

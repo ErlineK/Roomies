@@ -27,16 +27,14 @@ export function AuthProvider(props) {
     /* Important! do not change order to avoid redundant calls to services */
     setUser(undefined);
     setToken(undefined);
-
-    console.log("logging out user in Auth Context");
   };
 
   const getUserData = () => {
     axios
       .get(`${BASE_URL}/auth/${userId()}`, requestHeader)
       .then((res) => {
-        console.log("Getting user data:");
-        console.log(res);
+        // console.log("Getting user data:");
+        // console.log(res);
         //  save user and token to context
         setUser(res.data.user);
       })
