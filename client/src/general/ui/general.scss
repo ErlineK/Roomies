@@ -1,0 +1,182 @@
+@import "./ui_consts.scss";
+@import "./positioning.scss";
+@import "./texts.scss";
+
+.lg-sc-only {
+  display: none;
+}
+
+.appContainer {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: visible;
+}
+
+.user-main {
+  margin: auto;
+  display: inline-block;
+  position: relative;
+  width: 95%;
+  margin: auto;
+}
+
+#centralHolder {
+  position: inherit;
+  color: $accent-light;
+  background-color: fade-out($accent-light, 0.5);
+  float: left;
+  width: 79%;
+  margin: auto;
+
+  h1 {
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    font-family: "Bangers", cursive;
+  }
+
+  h4 {
+    color: $accent-dark;
+  }
+
+  hr {
+    width: 50%;
+  }
+}
+
+// gradient button
+.btn-grad {
+  border-radius: 30rem;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.5rem 3rem;
+  color: $accent-dark;
+  box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
+  border: solid 3px transparent;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0)
+    ),
+    linear-gradient(101deg, $orange-color, $accent-red-light);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  box-shadow: 2px 1000px 1px #fff inset;
+}
+
+.btn-grad-green {
+  margin: 0.5rem;
+  border-radius: 20rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: $accent-dark;
+  box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
+  border: solid 3px transparent;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0)
+    ),
+    $gradient-green;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  box-shadow: 2px 1000px 1px #fff inset;
+
+  .accent-icon {
+    margin: 0.2rem;
+  }
+
+  &:hover {
+    color: $accent-light;
+    box-shadow: none;
+
+    .accent-icon {
+      color: $accent-light;
+    }
+  }
+}
+
+.btn-grad-red {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0)
+    ),
+    $gradient-red;
+}
+
+.btn-grad-pressed {
+  border-radius: 30rem;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.5rem 3rem;
+  color: $accent-light;
+  box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
+  border: solid 3px transparent;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0)
+    ),
+    linear-gradient(101deg, $orange-color, $accent-red-light);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+.btn-grad:hover {
+  box-shadow: none;
+  color: $accent-light;
+}
+
+.positivVal {
+  color: $accent-green;
+}
+
+.negativeVal {
+  color: $accent-red;
+}
+
+.success {
+  color: $accent-green;
+}
+
+.abort {
+  color: $accent-red;
+}
+
+.popup {
+  position: fixed;
+  margin: auto;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  padding: 0.5rem;
+  align-items: center;
+  background-color: rgba($color: $accent-dark, $alpha: 0.75);
+  z-index: 99; //must be lower than 100 to not cover nav bar
+
+  .popupContent {
+    min-width: 400px;
+    width: 80%;
+    overflow-y: auto;
+  }
+}
+
+@media (min-width: $tablet) {
+  .lg-sc-only {
+    display: inherit;
+  }
+  .user-main {
+    width: 92%;
+    margin-left: 70px;
+    margin-bottom: 1rem;
+  }
+
+  .popup {
+    padding-left: 75px;
+
+    .popupContent {
+      padding: 0.5rem;
+      width: 50%;
+    }
+  }
+}

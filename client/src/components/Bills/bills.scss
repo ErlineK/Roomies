@@ -1,0 +1,85 @@
+@import "../../general/ui/ui_consts.scss";
+@import "../../general/ui/icons.scss";
+
+.billsHolder {
+  margin: 0;
+}
+
+.billItem {
+  .billsGrid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 3fr 3fr 4fr auto;
+    grid-template-rows: auto;
+
+    .gridItem {
+      // p {
+      //   font-size: 0.8rem;
+      // }
+    }
+  }
+
+  .billsIconsHolder {
+    align-items: center;
+    justify-content: center;
+    margin-top: -0.75rem;
+    margin-left: 0.5rem;
+
+    .billActionIcon {
+      position: relative;
+      // margin-right: 0.5rem;
+      // margin-left: 0.5rem;
+      font-size: 1.25rem;
+
+      &:nth-child(2) {
+        margin: 0;
+      }
+    }
+  }
+}
+
+.filterSelect {
+  width: unset;
+  display: inline;
+}
+
+.viewBillContainer {
+  width: 100%;
+  margin: auto;
+}
+
+.billDataSection {
+  position: relative;
+  padding: 1rem 1.5rem;
+  margin: 0;
+}
+
+.indented .editableDataItem {
+  padding: 0;
+}
+
+.paymentDelete {
+  margin-top: -0.1rem;
+}
+
+@media (min-width: $tablet) {
+  .billsHolder {
+    margin: 1rem;
+  }
+
+  .viewBillContainer {
+    width: 85%;
+  }
+
+  .billItem {
+    .billsGrid {
+      grid-template-columns: 2fr 3fr 3fr 5fr auto;
+
+      .gridItem {
+        // p {
+        //   font-size: 1rem;
+        // }
+      }
+    }
+  }
+}

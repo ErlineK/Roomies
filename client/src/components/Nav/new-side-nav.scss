@@ -1,0 +1,162 @@
+@import "../../general/ui/ui_consts.scss";
+@import "./navbar.scss";
+
+.snHolder {
+  height: 100%;
+  position: absolute;
+  display: inline;
+  // float: left;
+  top: 0;
+  left: 0;
+  bottom: 100%;
+  transition: height 3s ease-out;
+  z-index: 100;
+
+  // border-right: 1px solid rgb(143, 143, 143);
+  // box-shadow: 3px 3px 5px 3px rgba($color: $accent-dark, $alpha: 0.5);
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  .sideNav {
+    min-width: 2rem;
+    min-height: 4rem;
+    overflow: hidden;
+    background: $gradient;
+
+    section {
+      margin-top: 2rem;
+      display: block;
+    }
+  }
+
+  .sn-link-container {
+    color: $accent-dark;
+    display: block;
+
+    .snIconHolder {
+      display: inline-block;
+      width: 3rem;
+      // margin: 0 0.5rem;
+
+      .snIcon {
+        width: 2rem;
+        vertical-align: middle;
+      }
+    }
+
+    .snTitle {
+      display: block;
+      font-size: 1rem;
+      text-align: center;
+      padding: 0 0.5rem;
+    }
+
+    &:hover {
+      background-color: rgba($color: $accent-dark, $alpha: 0.5);
+      color: white;
+
+      .snTitle {
+        color: white;
+      }
+    }
+
+    &:active {
+      color: $primary-color;
+      opacity: 1;
+      .snTitle {
+        color: $primary-color;
+      }
+    }
+  }
+
+  .sn-link-active {
+    background-color: rgba($color: $orange-color, $alpha: 0.5);
+    color: $primary-color-dark;
+    opacity: 1;
+
+    &.active-orange {
+      color: $primary-color-dark;
+    }
+
+    &.active-red {
+      color: $accent-red;
+    }
+
+    &.active-green {
+      color: $accent-green;
+    }
+
+    &.active-blue {
+      color: $accent-blue;
+    }
+
+    &.active-red-light {
+      color: $accent-red-light;
+    }
+  }
+}
+
+.snCollapsed {
+  height: 0;
+  border-radius: 50%;
+  margin: 0 15%;
+  transition: height 0.7s ease-in, border-radius 0.3s ease-in 0.65s,
+    margin 0.3s linear 0.65s;
+}
+
+.snExpended {
+  height: 100%;
+  border-radius: 0;
+  transition: height 0.7s ease-out 0.25s, border-radius 0.25s ease-in;
+  box-shadow: 3px 3px 5px 3px rgba($color: $accent-dark, $alpha: 0.5);
+}
+
+@media (min-width: $tablet) {
+  .snHolder {
+    background: $gradient;
+    box-shadow: 3px 3px 5px 3px rgba($color: $accent-dark, $alpha: 0.5);
+
+    .sn-link-container {
+      display: block;
+      // float: left;
+
+      .snIconHolder {
+        display: inline-block;
+        width: 3rem;
+        margin: 0.4rem 0.5rem;
+
+        .snIcon {
+          width: 2rem;
+          vertical-align: middle;
+        }
+      }
+
+      .snTitle {
+        display: inline-block;
+        font-size: 1rem;
+        padding: 0;
+        width: 0rem;
+        // width: 8rem;
+        text-align: left;
+        color: transparent;
+        transition: width 0.75s ease-out, color 0.5s ease-out;
+      }
+    }
+
+    &:hover {
+      .snTitle {
+        width: 8rem;
+        color: $accent-dark;
+      }
+    }
+  }
+
+  .snCollapsed {
+    height: 100%;
+    border-radius: 0;
+    margin: 0;
+    transition: none;
+  }
+}

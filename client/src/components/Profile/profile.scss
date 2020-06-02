@@ -1,0 +1,66 @@
+@import "../../general/ui/ui_consts.scss";
+
+.actionIcon {
+  position: absolute;
+  right: 0;
+  margin: 0;
+  margin-top: -0.8rem;
+  margin-right: -0.5rem;
+}
+
+.avatarHolder {
+  position: relative;
+  width: fit-content;
+  margin: auto;
+
+  .actionIcon {
+    position: absolute;
+    right: 0;
+    margin: 0;
+    margin-top: -0.8rem;
+    margin-right: -0.5rem;
+  }
+
+  .doubleIconHolder {
+    margin-top: -1rem;
+    margin-right: -1rem;
+  }
+
+  .doubleIcon {
+    position: relative;
+    margin: 0.1rem;
+  }
+
+  .edit {
+    cursor: pointer;
+  }
+}
+
+.avatarContainer {
+  min-width: 30%;
+  display: flex;
+  margin: auto;
+}
+
+.actionBtn {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+
+.avatar {
+  color: $accent-darker;
+  margin: auto;
+
+  .actionIcon {
+    position: absolute;
+    right: 0;
+  }
+}
+
+@media (min-width: $tablet) {
+  .avatar {
+    max-width: 6rem;
+    max-height: 6rem;
+  }
+}

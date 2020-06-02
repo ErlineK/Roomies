@@ -1,0 +1,22 @@
+@import "../../../general/ui/ui_consts.scss";
+
+.editableDataItem {
+  width: 100%;
+  padding: 0.5rem;
+  color: $accent-darker;
+  white-space: nowrap;
+
+  .item {
+    margin: 0.5rem;
+  }
+
+  label {
+    margin: 0 0.75rem;
+  }
+
+  &:hover {
+    .ic_hidden {
+      visibility: visible;
+    }
+  }
+}

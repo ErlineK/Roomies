@@ -1,0 +1,42 @@
+.chores {
+  width: 100%;
+  margin: auto 0;
+  padding-left: 100px;
+  padding-right: 40px;
+}
+.chore-columns {
+  padding: 10px;
+  border: 2px solid #C7C9C9;
+  background-color: white;
+  border-radius: 0.25rem;
+}
+.btn.btn-primary {
+  background-color:white;
+  border-radius: 10rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: darkslategray;
+  box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
+  border: solid 3px transparent;
+}
+.btn.btn-sm {
+  background-color:white;
+  border-radius: 20rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: darkslategray;
+  box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
+  border: solid 3px transparent;
+}
+.form-control {
+  border-radius: 20rem;
+  margin: 5px;
+}
+th {
+  color: darkslategray;
+}
+
+td {
+  color: darkslategray;
+  width: 20%;
+}

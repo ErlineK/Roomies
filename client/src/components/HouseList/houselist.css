@@ -1,0 +1,12 @@
+.HouseList {
+    width: 100%;
+    margin: auto 0;
+    padding-left: 100px;
+    padding-right: 40px;
+}
+.house-columns {
+    padding: 10px;
+    border: 2px solid #C7C9C9;
+    background-color: white;
+    border-radius: 0.25rem;
+}

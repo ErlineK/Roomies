@@ -1,0 +1,40 @@
+@import "../../../general/ui/ui_consts.scss";
+@import "../../../general/ui/generic_list.scss";
+
+$list-gradient-red: (
+  linear-gradient(to right, $accent-light 50%, $accent-red 100%)
+);
+
+$list-gradient-orange: (
+  linear-gradient(to right, $accent-light 60%, $primary-color-dark 100%)
+);
+
+// $list-gradient-red: (
+//   linear-gradient(to right, $accent-light 40%, $accent-darker 100%)
+// );
+
+// $list-gradient-orange: (
+//   linear-gradient(to right, $accent-light 60%, $accent-darker 100%)
+// );
+
+.listItemHolder {
+  text-decoration: none;
+
+  &:hover {
+    color: inherit;
+  }
+
+  &.due1 {
+    background: $list-gradient-red;
+
+    .description {
+      color: white;
+    }
+  }
+  &.due2 {
+    background: $list-gradient-orange;
+    .description {
+      color: white;
+    }
+  }
+}

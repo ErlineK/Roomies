@@ -1,0 +1,97 @@
+@import "./ui_consts.scss";
+
+.indented {
+  width: 100%;
+  padding-left: 2.5rem;
+}
+
+.flex-container {
+  display: flex;
+  align-items: stretch;
+
+  &.flex-columns-holder {
+    flex-direction: column;
+  }
+
+  &.data-section {
+    flex-direction: column;
+  }
+
+  &.flex-center {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: stretch;
+  }
+
+  &.flex-fill {
+    justify-content: stretch;
+    align-items: flex-start;
+  }
+
+  &.flex-between {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    // align-items: flex-start;
+  }
+
+  &.flext-right {
+    justify-content: flex-end;
+  }
+
+  &.flex-center-vertical {
+    align-items: center;
+  }
+
+  &.flex-around {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+
+  &.align-base {
+    align-items: baseline;
+  }
+
+  &.doubleColumn {
+    flex-direction: column;
+    max-width: 50%;
+  }
+}
+
+.flex-item {
+  width: 98%;
+  padding: 2%;
+  margin: 0.5%;
+}
+
+.toLeft {
+  float: left;
+  text-align: left;
+}
+
+.toRight {
+  float: right;
+  text-align: right;
+}
+
+.toCenter {
+  margin: auto;
+  text-align: center;
+}
+
+.centerRsp {
+  margin: 0;
+}
+
+@media (min-width: $tablet) {
+  .flex-container {
+    &.flex-columns-holder {
+      flex-direction: row;
+      margin: auto;
+    }
+  }
+
+  .centerRsp {
+    margin: auto;
+  }
+}

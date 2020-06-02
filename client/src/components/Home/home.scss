@@ -1,0 +1,109 @@
+@import "../../general/ui/ui_consts.scss";
+
+.homeLogo {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  box-shadow: 3px 3px 5px gray;
+}
+
+.homeContainer {
+  width: 100%;
+}
+
+.homeContent {
+  padding-top: 3rem;
+}
+
+.homeSeparator {
+  width: 50%;
+  margin: auto;
+}
+
+.homePersonalContainer {
+  text-align: center;
+  padding: 0.5rem;
+  margin: 0.1rem;
+  background-color: rgba($color: $accent-light, $alpha: 0.9);
+
+  h2 {
+    color: $primary-color-dark;
+  }
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      color: $accent-red;
+    }
+  }
+}
+
+.home-central-holder {
+  margin: auto;
+  display: inline-block;
+  position: relative;
+  width: 95%;
+  margin: auto;
+}
+
+.buttonsHolder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.buttonsHolder a {
+  margin: 5px;
+}
+
+.homeRow {
+  flex-direction: column;
+}
+
+.homeItem {
+  width: 100%;
+  text-align: right;
+  padding: 0.1rem;
+}
+
+.balanceItem {
+  margin-top: 0.5rem;
+  text-align: center;
+
+  .underline {
+    padding: 0.3rem;
+    padding-bottom: 0;
+    border-bottom: 0.2rem solid $accent-green;
+
+    &.red {
+      border-bottom-color: $accent-red;
+    }
+  }
+
+  .balance-text {
+    font-size: 150%;
+    margin-top: -1rem;
+    font-weight: bold;
+  }
+}
+
+.subTitle {
+  font-size: 1.5rem;
+}
+
+@media (min-width: $tablet) {
+  .home-central-holder {
+    width: 92%;
+    margin-left: 70px;
+  }
+
+  .homeItem {
+    flex: 1;
+  }
+
+  .homeRow {
+    flex-direction: row;
+  }
+}

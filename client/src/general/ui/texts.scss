@@ -1,0 +1,53 @@
+@import "./ui_consts.scss";
+
+.description {
+  color: $accent-darker;
+  font-size: $font-sm;
+}
+
+.description-md {
+  color: $accent-darker;
+  font-size: $font-md;
+}
+
+.textLight {
+  color: $accent-gray-light;
+  font-weight: normal;
+  white-space: nowrap;
+}
+
+.txb {
+  font-weight: bold;
+}
+
+.section-title {
+  color: $primary-color-dark;
+  // margin-top: -1rem;
+}
+
+.title-margins {
+  margin: 0.5rem;
+}
+
+.completeItemText {
+  text-decoration: line-through;
+  color: $accent-darker;
+}
+
+.comment {
+  font-size: 0.85rem;
+  font-weight: normal;
+  // margin: 0rem 1rem;
+  text-align: left;
+}
+
+.comment-indent {
+  margin: 0rem 1rem;
+}
+
+.small-note {
+  font-size: 0.5rem;
+  color: $accent-darker;
+  vertical-align: middle;
+  margin: 0.25rem;
+}

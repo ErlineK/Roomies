@@ -1,0 +1,136 @@
+@import "./ui_consts.scss";
+
+.ic {
+  color: $accent-darker;
+  cursor: pointer;
+}
+
+.ic_lg {
+  font-size: $large-icon;
+}
+
+.ic_md {
+  font-size: $medium-icon;
+}
+
+.ic_sm {
+  font-size: $small-icon;
+}
+
+.ic_margins {
+  margin: 0.25rem 0.5rem;
+}
+
+.ic_margins_hr {
+  margin: 0 0.5rem;
+}
+
+.ic_margins_vr {
+  margin: 0.25rem 0;
+}
+
+.ic_fade {
+  opacity: 0.3;
+}
+
+.ic_decore {
+  cursor: none;
+}
+
+.ic_roomies {
+  color: $accent-darker;
+
+  &:hover {
+    color: $primary-color-dark;
+  }
+}
+
+.ic_success {
+  color: $accent-darker;
+
+  &.active {
+    color: $accent-green;
+  }
+
+  &:hover {
+    color: $accent-green;
+  }
+}
+
+.ic_alert {
+  color: $accent-darker;
+
+  &.active {
+    color: $accent-red;
+  }
+
+  &:hover {
+    color: $accent-red;
+  }
+}
+
+.ic_light {
+  color: $accent-light;
+}
+
+.btnClose {
+  position: absolute;
+  right: 0.5rem;
+  z-index: 1;
+}
+
+.btnBack {
+  position: absolute;
+  left: 0.5rem;
+  margin-top: 0.5rem;
+  z-index: 1;
+}
+
+.ic_action {
+  margin-top: 0.5rem;
+}
+
+.ic_placeholder {
+  visibility: hidden;
+}
+
+.ic_list_item {
+  align-self: flex-start;
+  margin-right: 1rem;
+  font-size: 1.5rem;
+  color: $accent-gray-light;
+
+  &.success {
+    color: $accent-green;
+  }
+}
+
+.actionIcon {
+  margin-top: 0.5rem;
+  margin-right: 1rem;
+  font-size: 1.5rem;
+  // color: $accent-dark;
+
+  &:hover {
+    &.edit {
+      color: $primary-color-dark;
+    }
+
+    &.success_hov {
+      color: $accent-green;
+    }
+
+    &.abort {
+      color: $accent-red;
+    }
+  }
+}
+
+@media (min-width: $tablet) {
+  .ic_hidden {
+    visibility: hidden;
+    &:hover {
+      visibility: visible;
+    }
+  }
+}

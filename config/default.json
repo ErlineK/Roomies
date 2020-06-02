@@ -1,0 +1,4 @@
+{
+  "dbURI": "mongodb+srv://dbAdmin:Qwer1234@roomies-2i0ki.gcp.mongodb.net/test?retryWrites=true&w=majority",
+  "JWT_SECRET": "roomies_hfdsk786&!"
+}

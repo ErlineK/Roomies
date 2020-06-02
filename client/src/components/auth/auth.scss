@@ -1,0 +1,79 @@
+@import "../../general/ui/ui_consts.scss";
+
+.from-container {
+  display: grid;
+  padding: 2%;
+  text-align: center;
+
+  button {
+    margin-top: 10%;
+  }
+
+  form {
+    display: flex;
+    width: 95%;
+    flex-direction: column;
+    justify-content: left;
+    padding: 4%;
+    margin: auto;
+
+    label {
+      text-align: left;
+      margin-top: 0.5rem;
+      margin-bottom: 0;
+    }
+
+    .input-margin {
+      margin-top: 5%;
+    }
+
+    .invalid-feedback {
+      display: inline-block;
+      margin-top: -0.3rem;
+      font-size: 70%;
+    }
+
+    .form-alert {
+      display: inline;
+      margin: -0.25rem 1rem;
+    }
+  }
+}
+
+.alert {
+  font-size: 70%;
+  margin-top: -0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 1.5rem;
+}
+
+.card {
+  background-color: rgba(245, 245, 245, 0.9);
+  color: $accent-dark;
+}
+
+.secondary-link {
+  cursor: pointer;
+  font-size: 1rem;
+  color: $accent-dark;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+@media (min-width: $tablet) {
+  .from-container {
+    padding: 2%;
+    text-align: center;
+
+    button {
+      margin-top: 10%;
+    }
+
+    form {
+      padding: 4%;
+      width: 50%;
+    }
+  }
+}

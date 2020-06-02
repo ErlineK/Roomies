@@ -1,0 +1,45 @@
+{
+  "name": "roomies",
+  "version": "1.0.0",
+  "description": "Roomies App",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "app": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ErlineK/Roomies.git"
+  },
+  "author": "Erline Katz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ErlineK/Roomies/issues"
+  },
+  "homepage": "https://github.com/ErlineK/Roomies#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.5.0",
+    "browser-image-compression": "^1.0.11",
+    "config": "^3.3.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.16",
+    "mongoose-type-email": "^1.0.12",
+    "node-sass": "^4.14.1",
+    "react-date-picker": "^8.0.1",
+    "react-dom": "^16.13.1",
+    "react-icons": "^3.10.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^3.4.1",
+    "recharts": "^1.8.5",
+    "validation": "0.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

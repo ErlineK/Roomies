@@ -1,0 +1,55 @@
+@import "../../../general/ui/ui_consts.scss";
+
+$loader-size: 50px;
+$border-size: 10px;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.loaderHolder {
+  margin: auto;
+  padding: 0.5rem;
+
+  .loader {
+    position: relative;
+    padding: 0.5rem;
+    margin: auto;
+    z-index: 1;
+    border: $border-size solid #f3f3f3;
+    border-radius: 50%;
+    border-top: $border-size solid $orange-color;
+    border-bottom: $border-size solid $primary-color;
+    width: $loader-size;
+    height: $loader-size;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  }
+}
+
+.floatingLoaderHolder {
+  width: 100%;
+  margin: auto;
+  position: absolute;
+  top: 30%;
+  z-index: 100;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

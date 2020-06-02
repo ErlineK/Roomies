@@ -1,0 +1,40 @@
+@import "../../../general/ui/ui_consts.scss";
+
+.commentSection {
+  width: 100%;
+  margin: 0 auto;
+  display: inline-flex;
+
+  .sectionIcon {
+    position: relative;
+    top: 0;
+    right: unset;
+    font-size: unset;
+  }
+}
+
+.commentHolder {
+  width: 100%;
+  margin: auto;
+}
+
+.inputEdit {
+  margin: 0 5px;
+  width: 0;
+  visibility: hidden;
+  transition: visibility 0.5s, width 1s ease-in-out;
+
+  &.showEdit {
+    width: 100%;
+    visibility: visible;
+  }
+}
+
+@media (min-width: $tablet) {
+  .commentSection {
+    width: 80%;
+  }
+  .commentHolder {
+    width: 80%;
+  }
+}
