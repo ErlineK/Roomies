@@ -2,6 +2,10 @@
   "name": "roomies",
   "version": "1.0.0",
   "description": "Roomies App",
+  "engines": {
+    "node": ">=10",
+    "npm": ">=6"
+  },
   "main": "app.js",
   "scripts": {
     "client-install": "npm install --prefix client",
