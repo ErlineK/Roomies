@@ -4,7 +4,7 @@ const House = require("../../models/House");
 const Payment = require("../../models/Payment");
 
 /* Controllers */
-const paymentController = require("../../controllers/bills/paymentController");
+const paymentController = require("./paymentController");
 
 /**
  * @route       api/bills/balance/:houseId/:userId
