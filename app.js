@@ -19,8 +19,7 @@ app.use(cors({ origin: true, credentials: true }));
 // Init Middleware
 app.use(express.json({ extended: false }));
 
-// // Join client
-// app.use(express.static(path.join(__dirname, "/client/build")));
+app.get("/api/hello", (req, res) => res.send("Hello World!"));
 
 // Use routes
 app.use("/api/users", require("./routes/api/users"));
@@ -37,11 +36,11 @@ app.use("/api/bills", require("./routes/api/bills"));
 // Serve static assets if in production
 if (process.env.NODE_ENV === "production") {
   // Set static folder
-  app.use(express.static("client/build"));
+  app.use(express.static("./client/build"));
 }
 
 app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  res.sendFile(path.resolve(__dirname, "./client/build/index.html"));
 });
 
 const port = process.env.PORT || 4000;
