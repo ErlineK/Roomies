@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "Roomies App",
   "engines": {
-    "node": ">=10",
-    "npm": ">=6"
+    "node": ">=10"
   },
   "main": "app.js",
   "scripts": {
@@ -15,7 +14,7 @@
     "install": "npm install --prefix client",
     "build": "npm run build --prefix client"
   },
-  "proxy": "https://localhost:8080",
+  "proxy": "https://localhost:4000",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ErlineK/Roomies.git"
