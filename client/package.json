@@ -2,9 +2,9 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:5000",
   "engines": {
-    "node": ">=10",
-    "npm": ">=6"
+    "node": ">=10"
   },
   "dependencies": {
     "@cometchat-pro/chat": "^2.0.8",
