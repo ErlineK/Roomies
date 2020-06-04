@@ -49,6 +49,8 @@ export default function Login() {
 
     if (validated()) {
       handleLogin();
+    } else {
+      setSrvError("Invalid credentials");
     }
   };
 

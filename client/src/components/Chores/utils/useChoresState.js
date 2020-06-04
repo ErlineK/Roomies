@@ -2,8 +2,9 @@ import { useContext } from "react";
 import axios from "axios";
 import useGetData from "../../../general/hooks/useGetData";
 import { AuthContext } from "../../auth/utils/AuthContext";
+import { BASE_URL } from "../../../general/utils/AppParams";
 
-const BASE_URI_CHORES = "http://localhost:5000/api/chores";
+const BASE_URI_CHORES = `${BASE_URL}/chores`;
 
 const choresMode = { HOME: "HOME", NONE: undefined };
 

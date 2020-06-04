@@ -4,10 +4,12 @@ const config = require("config");
 const db = config.get("dbURI");
 
 mongoose.set("useNewUrlParser", true);
+mongoose.set("useUnifiedTopology", true);
 
 const connectDB = async () => {
   const config = {
     autoIndex: true,
+    useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
     useFindAndModify: false,

@@ -1,5 +1,11 @@
 runtime: nodejs
 env: flex
+service: api
+handlers:
+  - url: /.*
+    script: auto
+    secure: always
+    redirect_http_response_code: 301
 automatic_scaling:
   min_num_instances: 1
   max_num_instances: 10

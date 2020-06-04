@@ -8,12 +8,14 @@
   },
   "main": "app.js",
   "scripts": {
-    "client-install": "npm install --prefix client",
+    "begin": "npm run build && node app.js",
     "start": "node app.js",
     "server": "nodemon app.js --exec babel-node --presets babel-preset-env",
-    "client": "npm start --prefix client",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "client": "npm run start --prefix client",
+    "install": "npm install --prefix client",
+    "build": "npm run build --prefix client"
   },
+  "proxy": "https://localhost:8080",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ErlineK/Roomies.git"
