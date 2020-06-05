@@ -19,9 +19,9 @@ app.use(cors({ origin: true, credentials: true }));
 // Init Middleware
 app.use(express.json({ extended: false }));
 
-app.get("/", (req, res) => {
-  res.send({ msg: "hello world" });
-});
+// app.get("/", (req, res) => {
+//   res.send({ msg: "hello world" });
+// });
 
 // Use routes
 app.use("/api/users", require("./routes/api/users"));
@@ -36,10 +36,10 @@ app.use("/api/bills", require("./routes/api/bills"));
 // });
 
 // Serve static assets if in production
-if (process.env.NODE_ENV === "production") {
-  // Set static folder
-  app.use(express.static("client/build"));
-}
+// if (process.env.NODE_ENV === "production") {
+// Set static folder
+app.use(express.static("client/build"));
+// }
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "build", "index.html"));

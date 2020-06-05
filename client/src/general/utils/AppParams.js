@@ -1,4 +1,6 @@
 export const BASE_URL = "/api"; //Server default uri
+// export const BASE_URL = "/api"; //Server default uri
+
 export const BILL_TYPES = [
   "Hydro",
   "Gas",
