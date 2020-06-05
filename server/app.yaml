@@ -1,6 +1,3 @@
 runtime: nodejs10
 
 service: api
-
-includes:
-  - env_vars.yaml
