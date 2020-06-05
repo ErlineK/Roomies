@@ -19,7 +19,9 @@ app.use(cors({ origin: true, credentials: true }));
 // Init Middleware
 app.use(express.json({ extended: false }));
 
-app.get("/api/hello", (req, res) => res.send("Hello World!"));
+app.get("/", (req, res) => {
+  res.send({ msg: "hello world" });
+});
 
 // Use routes
 app.use("/api/users", require("./routes/api/users"));
@@ -40,7 +42,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "/client/build/index.html"));
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
 
 const port = process.env.PORT || 4000;

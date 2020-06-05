@@ -2,19 +2,11 @@
   "name": "roomies",
   "version": "1.0.0",
   "description": "Roomies App",
-  "engines": {
-    "node": ">=10"
-  },
   "main": "app.js",
   "scripts": {
-    "begin": "npm run build && node app.js",
-    "start": "node app.js",
-    "server": "nodemon app.js --exec babel-node --presets babel-preset-env",
-    "client": "npm run start --prefix client",
-    "install": "npm install --prefix client",
-    "build": "npm run build --prefix client"
+    "start": "node app.js"
   },
-  "proxy": "https://localhost:4000",
+  "proxy": "localhost:4000",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ErlineK/Roomies.git"
