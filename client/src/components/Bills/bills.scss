@@ -9,7 +9,7 @@
   .billsGrid {
     width: 100%;
     display: grid;
-    grid-template-columns: 3fr 3fr 4fr auto;
+    grid-template-columns: 3fr 3fr 1fr;
     grid-template-rows: auto;
 
     .gridItem {

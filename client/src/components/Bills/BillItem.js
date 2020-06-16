@@ -45,7 +45,7 @@ function BillItem({ item, type }) {
       removeBill(item._id);
   };
 
-  const billingPreiod =
+  const billingPeriod =
     item && item.start_date && item.end_date
       ? `${formatDayMonth(item.start_date)} - ${formatDayMonth(item.end_date)}`
       : "";
@@ -120,8 +120,8 @@ function BillItem({ item, type }) {
             </p>
           </div>
 
-          <div className="gridItem">
-            <p>{billingPreiod}</p>
+          <div className="gridItem lg-sc-only">
+            <p>{billingPeriod}</p>
           </div>
 
           <div className="gridItem">
