@@ -7,7 +7,7 @@ import HouseList from "../HouseList/houselist";
 import Registration from "../auth/Registration";
 import Login from "../auth/Login";
 import UserHome from "../Home/UserHome/UserHome";
-import Chores from "../Chores/chores";
+import Chores from "../Chores/Chores";
 import UserSettings from "../UserSettings/Settings";
 import CreateProfile from "../Profile/CreateProfile";
 import ViewBill from "../Bills/ViewBill";

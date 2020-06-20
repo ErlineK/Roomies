@@ -1,0 +1,25 @@
+@import "../../general/ui/general.scss";
+
+.choresGrid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 1fr 1fr;
+  margin-left: 0.5rem;
+
+  .gridSecondRow {
+    grid-column: 0 / span 1;
+    grid-row: 2/3;
+  }
+}
+
+@media (min-width: $tablet) {
+  .choresGrid {
+    grid-template-columns: 2fr 2fr 1fr;
+    grid-template-rows: auto;
+
+    .gridSecondRow {
+      grid-row: auto;
+    }
+  }
+}

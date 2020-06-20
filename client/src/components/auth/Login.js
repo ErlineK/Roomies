@@ -13,12 +13,12 @@ const test_user = {
   // pass: "Qwer1234",
   // email: "super@super.com",
   // pass: "Qwer1234",
-  // email: "test@test.com",
-  // pass: "Test1234",
+  email: "test@test.com",
+  pass: "Test1234",
   // email: "Bond007@gmail.com",
   // pass: "Bond007",
-  email: "",
-  pass: "",
+  // email: "",
+  // pass: "",
 };
 
 export default function Login() {

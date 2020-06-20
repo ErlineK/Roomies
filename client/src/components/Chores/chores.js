@@ -1,132 +1,76 @@
-import React, { Component } from "react";
-import "./chores.css";
-import DatePicker from "react-date-picker";
+import React, { useContext } from "react";
+import "../Bills/bills.scss";
+import "./chores.scss";
+import { getIcon } from "../../general/utils/iconManager";
+import AddChorePop from "./AddChorePop";
+import CardWithLoader from "../GenericComponents/CardWithLoader";
+import { ChoresContext, ChoresActionsContext } from "./utils/ChoresContext";
+import ChoreItem from "./ChoreItem";
+import { HouseContext } from "../UserSettings/House/utils/HouseContext";
+import useInputState from "../../general/hooks/useInputState";
+import { AuthContext } from "../auth/utils/AuthContext";
 
-class Chores extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      taskItems: [],
-      message: "",
-      roommates: ["Devin", "Erline", "Mike", "Nicole"],
-      date: new Date(),
-    };
-  }
+export default function Chores() {
+  const { userId } = useContext(AuthContext);
+  const chores = useContext(ChoresContext);
+  const { getActiveTenants } = useContext(HouseContext);
+  const { requestStatus, choresActions } = useContext(ChoresActionsContext);
+  const [choreLeader, handleChoreLeaderChange] = useInputState("select", "ALL");
 
-  onChange = (date) => this.setState({ date }, () => console.log(this.state));
+  const ROOMIES = getActiveTenants();
 
-  addTask(evt) {
-    evt.preventDefault();
-    const { taskItems } = this.state;
-    const newItem = this.newItem.value;
-    const isOnTheList = taskItems.includes(newItem);
+  console.log("choreLeader is: " + choreLeader);
 
-    if (isOnTheList) {
-      this.setState({
-        message: "Item already on the list.",
-      });
-    } else {
-      newItem !== "" &&
-        this.setState({
-          //prevention of empty sring
-          taskItems: [...this.state.taskItems, newItem], //this will be an object that updates the current state
-          message: "",
-        });
-    }
+  const choreLeaderOptions = ROOMIES.map((roomie) => (
+    <option key={roomie._id} value={roomie.name}>
+      {roomie._id === userId() ? "Me" : roomie.name}
+    </option>
+  ));
 
-    this.addForm.reset();
-  }
+  console.log("choreLeaderOptions: ");
+  console.log(choreLeaderOptions);
 
-  removeAll() {
-    this.setState({
-      taskItems: [],
-    });
-  }
+  // filter bills by bill type
+  const filteredChores =
+    choreLeader === "all" || choreLeader === "select"
+      ? chores
+      : chores.filter((chore) => chore.leader.name === choreLeader);
 
-  render() {
-    const { taskItems, message } = this.state;
-    return (
-      <div className="chores">
-        <div className="chore-columns">
-          <h2>House Chores</h2>
-          <h4>This is an incomplete module! Comming soon...</h4>
-          <form
-            ref={(input) => (this.addForm = input)}
-            className="form-inline"
-            onSubmit={(evt) => {
-              this.addTask(evt);
-            }}
-          >
-            <div className="form-group">
-              <label className="sr-only" htmlFor="newItemInput">
-                Add New Task
-              </label>
-              <input
-                ref={(input) => (this.newItem = input)}
-                type="text"
-                placeholder="Sweeping"
-                className="form-control"
-                id="newItemInput"
-              />
-            </div>
-            <button type="submit" className="btn btn-primary">
-              Add
-            </button>
-          </form>
-          <div>
-            {message !== "" && <p className="message text-danger">{message}</p>}
-          </div>
-          <table className="table">
-            <thead>
-              <tr>
-                <th scope="col">Task</th>
-                <th scope="col">Leader</th>
-                <th scope="col">Complete By</th>
-              </tr>
-            </thead>
-            <tbody>
-              {taskItems.map((item) => {
-                return (
-                  <tr key={item}>
-                    {/* <th scope="row">1</th> */}
-                    <td>{item}</td>
-                    <td>
-                      <select>
-                        {this.state.roommates.map((list) => (
-                          <option key={list} value={list}>
-                            {list}
-                          </option>
-                        ))}
-                      </select>
-                    </td>
-                    <td>
-                      <DatePicker
-                        onChange={this.onChange}
-                        value={this.state.date}
-                      />
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-            <tfoot>
-              <tr>
-                <td colSpan="2">&nbsp;</td>
-                <td className="text-right">
-                  <button
-                    onClick={(evt) => this.removeAll()}
-                    type="button"
-                    className="btn btn-sm"
-                  >
-                    Clear Item List
-                  </button>
-                </td>
-              </tr>
-            </tfoot>
-          </table>
-        </div>
+  // disply incomplete chores first by due date
+  const choreItems = filteredChores
+    ? filteredChores
+        .sort((ch) => !ch.complete)
+        .sort((a, b) => {
+          return new Date(a.dueDate).getTime() - new Date(b.dueDate).getTime();
+        })
+        // .reverse()
+        .map((chore) => <ChoreItem key={chore._id} item={chore} />)
+    : "";
+
+  return (
+    <CardWithLoader loading={requestStatus.isLoading}>
+      <h3>Chores</h3>
+
+      <div className="billsHolder flex-container flex-between flex-center-vertical">
+        <select
+          className="form-control filterSelect"
+          id="choreLeader"
+          onChange={handleChoreLeaderChange}
+          value={choreLeader}
+        >
+          <option value="select" disabled>
+            Filter Chores by Roomie...
+          </option>
+          <option value="all">All</option>
+          {choreLeaderOptions}
+        </select>
+
+        {getIcon("addFile", "Add new chore", "ic ic_lg ic_roomies", () =>
+          choresActions.toggleAddChore()
+        )}
       </div>
-    );
-  }
+      <div className="billsHolder listContainer">{choreItems}</div>
+      {choresActions.showAddChore && <AddChorePop />}
+    </CardWithLoader>
+  );
 }
-export default Chores;

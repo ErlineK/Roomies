@@ -71,6 +71,13 @@ export function validateVal(value, valueType) {
       }
       break;
 
+    case "TXT_INPUT":
+      //min 2 chars, max 250
+      if (value.trim().length < 2 || value.length > 250) {
+        validationErr = "Invalid input";
+      }
+      break;
+
     default:
       break;
   }

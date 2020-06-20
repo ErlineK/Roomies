@@ -6,12 +6,12 @@ import { ChoresActionsContext } from "./utils/ChoresContext";
 // TODO: on tesk complete - change glow to complete with animation + send to DB
 
 function HomeChoreItem({ item }) {
-  const [choresActions] = useContext(ChoresActionsContext);
+  const { choresActions } = useContext(ChoresActionsContext);
   return (
     <div
       // className={`${getBackgroundByDue(item.dueDate)} listItemHolder`}
       className="listItemHolder"
-      onClick={() => choresActions.toggleChore(item._id)}
+      onClick={() => choresActions.toggleChore(item._id, item.complete)}
     >
       <div className="listFlexHolder">
         <div
@@ -24,7 +24,7 @@ function HomeChoreItem({ item }) {
             <p className={item.complete ? "completeItemText" : ""}>
               {item.task}
             </p>
-            <p className="description textLight">
+            <p className="description textLight txr">
               {item.dueDate ? formatDateOnly(item.dueDate) : ""}
             </p>
           </div>

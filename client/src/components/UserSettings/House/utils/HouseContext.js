@@ -109,16 +109,16 @@ export function HouseProvider(props) {
   };
 
   const getSelectedHouse = () => {
-    const selectedHouse = houses.filter(
-      (house) => house._id === selectedHouseId
-    );
+    const selectedHouse = houses
+      ? houses.filter((house) => house._id === selectedHouseId)
+      : undefined;
     return selectedHouse ? selectedHouse[0] : "";
   };
 
   const getSelectedHouseActiveTenants = () => {
     const selectedHouse = getSelectedHouse();
 
-    return selectedHouse.approved_tenants;
+    return selectedHouse ? selectedHouse.approved_tenants : [];
   };
 
   return (
